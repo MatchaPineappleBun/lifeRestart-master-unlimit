@@ -1,9 +1,7 @@
 {
-  "name": "y",
+  "name": "life_restart",
   "type": "module",
-  "bin": {
-    "xlsx_transform": "test/index.js"
-  },
+  "bin": "repl/index.js",
   "scripts": {
     "test": "node test",
     "xlsxTransform": "node utils/xlsxTransform.js data",
@@ -13,24 +11,14 @@
   "dependencies": {
     "@babel/core": "^7.15.4",
     "@babel/preset-env": "^7.15.4",
-    "@vue/cli-service": "^4.5.13",
+    "acorn": "^8.5.0",
     "babel-loader": "^8.2.2",
     "core-js": "^3.17.2",
     "webpack": "^5.51.2",
     "webpack-dev-server": "^4.1.0",
-    "xlsx": "^0.17.0",
-    "yarn": "^1.22.11"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
-    "@types/node": "^16.7.13",
     "webpack-cli": "^4.8.0"
-  },
-  "description": "<a href=\"https://discord.gg/U3qrf49NMQ\"><img src=\"https://img.shields.io/discord/883382868427014255?color=%23FEE75C&label=Discord&logo=discord&logoColor=white&style=for-the-badge\" /></a>",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

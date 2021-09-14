@@ -19,20 +19,15 @@ class Event {
         }
     }
 
+    count() {
+        return Object.keys(this.#events).length;
+    }
+
     check(eventId, property) {
         const { include, exclude, NoRandom } = this.get(eventId);
-        //是否非随机事件
-        if(NoRandom) {
-            return false;
-        }
-        //判断排除的条件
-        if(exclude && checkCondition(property, exclude)){
-            return false;
-        }
-        //判断触发的条件
-        if(include) {
-            return checkCondition(property, include);
-        }
+        if(NoRandom) return false;
+        if(exclude && checkCondition(property, exclude)) return false;
+        if(include) return checkCondition(property, include);
         return true;
     }
 

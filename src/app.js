@@ -191,12 +191,13 @@ class App{
             .find('#rank')
             .click(()=>this.hint('别卷了，没有排行榜'));
         // Talent
+
         const talentPage = $(`
         <div id="main">
             <div class="head" style="font-size: 1.6rem">天赋抽卡</div>
             <button id="random" class="mainbtn" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"">开启逆天人生！</button>
             <ul id="talents" class="selectlist"></ul>
-            <button id="next" class="mainbtn">请选择天赋<</button>
+            <button id="next" class="mainbtn">请选择天赋</button>
         </div>
         `);
 
@@ -310,6 +311,8 @@ class App{
 
         // Property
         // hint of extension tobermory.es6-string-html
+        //设置行高
+        var winHeight = $(window).width() *0.5;
         const propertyPage = $(/*html*/`
         <div id="main">
             <div class="head" style="font-size: 1.6rem">
@@ -317,7 +320,9 @@ class App{
                 <div id="total" style="font-size:1rem; font-weight:normal;">可用属性点：0</div>
             </div>
             <ul id="propertyAllocation" class="propinitial"></ul>
-            <ul class="selectlist" id="talentSelectedView"></ul>
+            <div style="height:`+winHeight+`px;overflow-y:scroll">
+                <ul class="selectlist" id="talentSelectedView"></ul>
+            </div>
             <div class="btn-area">
                 <button id="random" class="mainbtn">随机分配</button>
                 <button id="start" class="mainbtn">开始新人生</button>
@@ -556,21 +561,26 @@ class App{
             .click(()=>auto(500));
 
         // Summary
+        //设置行高
+        var winHeight = $(window).width() *0.5;
         const summaryPage = $(`
         <div id="main">
             <div class="head">人生总结</div>
-            <ul id="judge" class="judge">
-                <li class="grade2"><span>颜值：</span><span>9级 美若天仙</span></li>
-                <li class="grade0"><span>智力：</span><span>4级 智力一般</span></li>
-                <li class="grade0"><span>体质：</span><span>1级 极度虚弱</span></li>
-                <li class="grade0"><span>家境：</span><span>6级 小康之家</span></li>
-                <li class="grade0"><span>享年：</span><span>3岁 早夭</span></li>
-                <li class="grade0"><span>快乐：</span><span></span>3级 不太幸福的人生</li>
-            </ul>
+			<ul id="judge" class="judge">
+				<li class="grade2"><span>颜值：</span><span>9级 美若天仙</span></li>
+				<li class="grade0"><span>智力：</span><span>4级 智力一般</span></li>
+				<li class="grade0"><span>体质：</span><span>1级 极度虚弱</span></li>
+				<li class="grade0"><span>家境：</span><span>6级 小康之家</span></li>
+				<li class="grade0"><span>享年：</span><span>3岁 早夭</span></li>
+				<li class="grade0"><span>快乐：</span><span></span>3级 不太幸福的人生</li>
+			</ul>
             <div class="head" style="height:auto;">天赋，你可以选一个，下辈子还能抽到</div>
-            <ul id="talents" class="selectlist" style="flex: 0 1 auto;">
-                <li class="grade2b">黑幕（面试一定成功）</li>
-            </ul>
+            <div style="height:`+winHeight+`px;overflow-y:scroll">
+                <ul id="talents" class="selectlist" style="flex: 0 1 auto;">
+					<li class="grade2b">黑幕（面试一定成功）</li>
+				</ul>
+            </div>
+            
             <button id="again" class="mainbtn"><span class="iconfont">&#xe6a7;</span>再次重开</button>
         </div>
         `);
